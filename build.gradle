@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+
+android {
+    compileSdkVersion 28
+    buildToolsVersion "28.0.3"
+
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 28
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        consumerProguardFiles 'consumer-rules.pro'
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    lintOptions {
+        abortOnError false
+    }
+
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    implementation 'com.android.support:appcompat-v7:28.0.0'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.2'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.2'
+    //约束布局
+    implementation 'com.android.support.constraint:constraint-layout:1.1.3'
+    //rxjava
+    api 'io.reactivex.rxjava2:rxjava:2.1.0'
+}
+
+//配置上传lib资料区
+//publish {
+//    userOrg = 'niehuolin'//用户账号
+//    groupId = 'com.lib_nhl.view'//lib唯一id
+//    artifactId = 'lib_nhl'//网站上创建的仓库名称
+//    version = '0.0.1'
+//    description = 'Super duper easy way to release your Android and other artifacts to bintray'
+//    website = "https://github.com/nie-huolin/nhl_lib"
+//}
