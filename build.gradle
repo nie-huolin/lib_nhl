@@ -1,4 +1,5 @@
 apply plugin: 'com.android.library'
+apply plugin: 'com.novoda.bintray-release'
 
 android {
     compileSdkVersion 28
@@ -41,11 +42,11 @@ dependencies {
 }
 
 //配置上传lib资料区
-//publish {
-//    userOrg = 'niehuolin'//用户账号
-//    groupId = 'com.lib_nhl.view'//lib唯一id
-//    artifactId = 'lib_nhl'//网站上创建的仓库名称
-//    version = '0.0.1'
-//    description = 'Super duper easy way to release your Android and other artifacts to bintray'
-//    website = "https://github.com/nie-huolin/nhl_lib"
-//}
+publish {
+    userOrg = 'niehuolin'                                     //bintray.com 账号用户名
+    groupId = 'com.lib_nhl.view'                              //唯一 id，最后依赖的库名组成部分之一
+    artifactId = 'lib_nhl'                                    //仓库名
+    publishVersion = '0.0.2'                                  //版本号
+    desc = 'add something'            //描述
+    website = 'https://github.com/nie-huolin/lib_nhl'   //开源项目网址
+}
